@@ -9,7 +9,7 @@
 
 "Send events to both players" = "Wyślij zdarzenie do obu odtwarzaczy";
 "Open at login" = "Otwórz przy zalogowaniu";
-"Prioritize iTunes" = "Priorytetyzuj iTunes";
+"Prioritize Music" = "Priorytetyzuj Music";
 "Prioritize Spotify" = "Priorytetyzuj Spotify";
 "Pause" = "Pauza";
 "Pause if no player is running" = "Zapauzuj, jeśli żaden odtwarzacz nie jest uruchomiony";

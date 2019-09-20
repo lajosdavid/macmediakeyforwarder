@@ -8,7 +8,7 @@
 
 "Send events to both players" = "Ohjaa molempia soittimia";
 "Open at login" = "Avaa sisäänkirjautuessa";
-"Prioritize iTunes" = "iTunes etusijalla";
+"Prioritize Music" = "Music etusijalla";
 "Prioritize Spotify" = "Spotify etusijalla";
 "Pause" = "Tauko";
 "Pause if no player is running" = "Tauko soittimien ollessa kiinni";

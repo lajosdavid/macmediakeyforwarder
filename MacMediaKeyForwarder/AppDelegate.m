@@ -9,7 +9,7 @@ typedef NS_ENUM(NSInteger, MediaKeysPrioritize)
 {
     // Normal behavior (without priority; send events to iTunes and Spotify if both are open)
     MediaKeysPrioritizeNone,
-    // If both apps are open, prioritize iTunes over Spotify
+    // If both apps are open, Prioritize Music over Spotify
     MediaKeysPrioritizeITunes,
     // If both apps are open, prioritize Spotify over iTunes
     MediaKeysPrioritizeSpotify
@@ -101,7 +101,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
             return event;
         }
         
-        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.Music"];
         SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
         
         if ( pauseState == PauseStatePause )
@@ -313,7 +313,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
     
     [priorityOptionItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Send events to both players", @"Send events to both players") action : @selector(prioritizeNone) keyEquivalent : @"" ]];
-    [priorityOptionItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize iTunes", @"Prioritize iTunes") action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
+    [priorityOptionItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize Music", @"Prioritize Music") action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
     [priorityOptionItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize Spotify", @"Prioritize Spotify") action : @selector(prioritizeSpotify) keyEquivalent : @"" ]];
 
     [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
@@ -354,7 +354,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 		if ( @available(macOS 10.14, *) )
 		{
 
-			iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+			iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.Music"];
 			SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
 			
 			if ( spotify != nil )
@@ -365,7 +365,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 			
 			if ( iTunes != nil )
 			{
-				NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.apple.iTunes"];
+				NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.apple.Music"];
 				AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
 			}
 		}

@@ -126,7 +126,7 @@ What's new in version 1.6 :
 - increased compatibility with external keyboards
 
 What's new in version 1.5 :
-- now you can explicitly prioritize iTunes or Spotify
+- now you can explicitly Prioritize Music or Spotify
 - play button now starts up iTunes or Spotify if they are not running aaaand explicitly selected
 
 What's new in version 1.4 :
