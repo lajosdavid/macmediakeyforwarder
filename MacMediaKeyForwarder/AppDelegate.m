@@ -7,11 +7,11 @@
 
 typedef NS_ENUM(NSInteger, MediaKeysPrioritize)
 {
-    // Normal behavior (without priority; send events to iTunes and Spotify if both are open)
+    // Normal behavior (without priority; send events to Music and Spotify if both are open)
     MediaKeysPrioritizeNone,
-    // If both apps are open, prioritize iTunes over Spotify
+    // If both apps are open, Prioritize Music over Spotify
     MediaKeysPrioritizeITunes,
-    // If both apps are open, prioritize Spotify over iTunes
+    // If both apps are open, prioritize Spotify over Music
     MediaKeysPrioritizeSpotify
 };
 
@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, PauseState)
     PauseStateNone,
     // pause app
     PauseStatePause,
-    // pause app automatically when iTunes and Spotify is not running
+    // pause app automatically when Music and Spotify is not running
     PauseStateAutomatic,
 };
 
@@ -103,7 +103,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
             return event;
         }
         
-        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:[self iTunesBundleIdentifier]];
+        iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.Music"];
         SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
         
         if ( pauseState == PauseStatePause )
@@ -267,17 +267,6 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     }
 }
 
-- (NSString *)iTunesBundleIdentifier {
-    if ( @available(macOS 10.15, *) )
-    {
-        return @"com.apple.music";
-    }
-    else
-    {
-        return @"com.apple.iTunes";
-    }
-}
-
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
 
@@ -326,7 +315,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line
     
     [priorityOptionItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Send events to both players", @"Send events to both players") action : @selector(prioritizeNone) keyEquivalent : @"" ]];
-    [priorityOptionItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize iTunes", @"Prioritize iTunes") action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
+    [priorityOptionItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize Music", @"Prioritize Music") action : @selector(prioritizeITunes) keyEquivalent : @"" ]];
     [priorityOptionItems addObject:[ menu addItemWithTitle: NSLocalizedString(@"Prioritize Spotify", @"Prioritize Spotify") action : @selector(prioritizeSpotify) keyEquivalent : @"" ]];
 
     [ menu addItem : [ NSMenuItem separatorItem ] ]; // A thin grey line

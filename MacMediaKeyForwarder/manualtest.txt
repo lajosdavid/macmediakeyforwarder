@@ -8,11 +8,11 @@ Default state :
     - app shouldn't start music players automatically.
 
 iTunes state :
-    - select Prioritize iTunes from the menu
+    - select Prioritize Music from the menu
     - check if app starts up iTunes automatically
     - check if play/pause/prev/next is working
     - check if fast forward/rewind is working
-    - restart app and check if prioritize iTunes remains selected
+    - restart app and check if Prioritize Music remains selected
 
 Spotify state :
     - select Prioritize Spotify from the menu

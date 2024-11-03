@@ -8,7 +8,7 @@
 
 "Send events to both players" = "Események küldése mindkét lejátszónak";
 "Open at login" = "Automatikus megnyitás bejelentkezéskor";
-"Prioritize iTunes" = "Az iTunes fontosabb";
+"Prioritize Music" = "A Music fontosabb";
 "Prioritize Spotify" = "A Spotify fontosabb";
 "Pause" = "Szünet";
 "Pause if no player is running" = "Szüneteltetés ha nem fut lejátszó";
